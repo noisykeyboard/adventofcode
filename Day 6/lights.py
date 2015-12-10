@@ -3,7 +3,7 @@ import re
 instructions = open("input", 'r').readlines()
 
 # create a 1 million light array of 1000 x 1000
-lights = [[0 for i in range(0, 999)] for i in range(0, 999)]
+lights = [[0 for i in range(0, 1000)] for i in range(0, 1000)]
 lightson = 0
 
 def parse_inst(instruction):
@@ -12,8 +12,8 @@ def parse_inst(instruction):
 
 def toggle(range_total):
     range_begin, range_end = range_total
-    for i in range(range_begin[0], range_end[0]):
-        for p in range(range_begin[1], range_end[1]):
+    for i in range(range_begin[0], range_end[0]+1):
+        for p in range(range_begin[1], range_end[1]+1):
             if lights[i][p] == 1:
                 lights[i][p] = 0
             else:
@@ -21,14 +21,14 @@ def toggle(range_total):
 
 def turnon(range_total):
     range_begin, range_end = range_total
-    for i in range(range_begin[0], range_end[0]):
-        for p in range(range_begin[1], range_end[1]):
+    for i in range(range_begin[0], range_end[0]+1):
+        for p in range(range_begin[1], range_end[1]+1):
             lights[i][p] = 1
 
 def turnoff(range_total):
     range_begin, range_end = range_total
-    for i in range(range_begin[0], range_end[0]):
-        for p in range(range_begin[1], range_end[1]):
+    for i in range(range_begin[0], range_end[0]+1):
+        for p in range(range_begin[1], range_end[1]+1):
             lights[i][p] = 0
 
 for instruction in instructions:
