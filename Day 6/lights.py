@@ -13,7 +13,7 @@ def parse_inst(instruction):
 def toggle(range_total):
     range_begin, range_end = range_total
     for i in range(range_begin[0], range_end[0]):
-        for p in range(range_begin[1], range_end[1]+1):
+        for p in range(range_begin[1], range_end[1]):
             if lights[i][p] == 1:
                 lights[i][p] = 0
             else:
